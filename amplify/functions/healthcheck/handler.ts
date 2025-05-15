@@ -1,5 +1,10 @@
-import type { Handler } from 'aws-lambda';
+import type { APIGatewayProxyHandlerV2 } from 'aws-lambda';
 
-export const handler: Handler = async (event, context) => {
-  return 'OK';
+export const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
+  console.log("event", event);
+
+  return {
+    statusCode: 200,
+    body: 'OK'
+  };
 };
